@@ -1,11 +1,18 @@
+##[287-find-the-duplicate-number](https://leetcode.com/problems/find-the-duplicate-number/)
+
+![](https://badgen.net/badge/Level/Medium/yellow)
+
 Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
-
 There is only one repeated number in nums, return this repeated number.
-
 You must solve the problem without modifying the array nums and uses only constant extra space.
 
-https://leetcode.com/problems/find-the-duplicate-number/
-```
+### Approach Used - 1:
+
+- Sorting the array and then iterating through it to find the duplicate element.
+
+### Code-1 (C++)
+
+```cpp
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -20,29 +27,30 @@ public:
         return prev;
     }
 };
+```
 
 ### Time Complexity:
-
-1. **Sorting the array:**
-   - The sorting operation `sort(nums.begin(), nums.end())` has a time complexity of \(O(n \log n)\), where \(n\) is the number of elements in the array.
-   
-2. **Iterating through the array:**
-   - The loop `for(int x : nums)` iterates through the array once, which has a time complexity of \(O(n)\).
-
-Therefore, the overall time complexity of the provided solution is dominated by the sorting step, resulting in \(O(n \log n)\).
-
+- **O(nlog n):** The sorting operation has a time complexity of O(nlog n) & the loop iterates through the array once, which has a time complexity of O(n).
 ### Space Complexity:
+- **O(1) to O(log n):** sorting algorithms can have O(log n) space complexity due to recursion stack space.
 
-1. **Sorting the array:**
-   - The `sort` function requires \(O(1)\) extra space for the sorting itself if we consider in-place sorting algorithms like heapsort. However, many common sorting algorithms (like quicksort or mergesort) can have \(O(\log n)\) space complexity due to recursion stack space.
-   
-2. **Auxiliary space:**
-   - The space used for variables (`prev` and `x`) is \(O(1)\).
+### Approach Used - 2 (Floyd's Tortoise and Hare Algorithm):
+1. **Initialization:**
+   - `slow` and `fast` pointers are both initialized to the first element of the array.
 
-Therefore, the overall space complexity is \(O(1)\) to \(O(\log n)\), depending on the sorting algorithm used.
+2. **Finding the Intersection Point:**
+   - The `slow` pointer moves one step at a time: `slow = nums[slow]`.
+   - The `fast` pointer moves two steps at a time: `fast = nums[nums[fast]]`.
+   - The loop continues until `slow` equals `fast`, indicating a cycle is detected.
 
-```
-Floyd's Tortoise and Hare Algorithm
+3. **Finding the Entrance to the Cycle:**
+   - Reset the `slow` pointer to the beginning of the array.
+   - Move both `slow` and `fast` pointers one step at a time: `slow = nums[slow]` and `fast = nums[fast]`.
+   - The point where `slow` and `fast` meet again is the entrance to the cycle, which is the repeated number.
+
+### Code-2 (C++)
+
+```cpp
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -66,20 +74,12 @@ public:
         return slow;
     }
 };
+```
 
-### Explanation:
+### Time Complexity:
 
-1. **Initialization:**
-   - `slow` and `fast` pointers are both initialized to the first element of the array.
+- **O(n):** The loop iterates through the array once.
 
-2. **Finding the Intersection Point:**
-   - The `slow` pointer moves one step at a time: `slow = nums[slow]`.
-   - The `fast` pointer moves two steps at a time: `fast = nums[nums[fast]]`.
-   - The loop continues until `slow` equals `fast`, indicating a cycle is detected.
+### Space Complexity:
 
-3. **Finding the Entrance to the Cycle:**
-   - Reset the `slow` pointer to the beginning of the array.
-   - Move both `slow` and `fast` pointers one step at a time: `slow = nums[slow]` and `fast = nums[fast]`.
-   - The point where `slow` and `fast` meet again is the entrance to the cycle, which is the repeated number.
-
-This algorithm efficiently finds the repeated number in linear time `O(n)` with constant extra space `O(1)`.
+- **O(1):** No extra space is used.

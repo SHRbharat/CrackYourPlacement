@@ -1,10 +1,26 @@
+##[01-Two Sum](https://leetcode.com/problems/two-sum/)
+
+![](https://badgen.net/badge/Level/Medium/green)
+
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
-
 You can return the answer in any order.
-https://leetcode.com/problems/two-sum/description/
 
+### Approach Used :
+
+-   To solve the problem of finding two indices in an array that add up to a given target, we can use a hash map (unordered_map in C++) to efficiently track the indices of the elements as we iterate through the array.
+
+- Use an `unordered_map` to store the elements of the array and their indices as we iterate through the array.
+
+- For each element `nums[i]`, calculate its complement with respect to the target (`complement = target - nums[i]`).
+
+- Check if the complement already exists in the map. If it does, that means we have found the two indices that add up to the target.
+    - Return the indices of the complement and the current element (`{numMap[complement], i}`).
+    - If the complement does not exist in the map, store the current element and its index in the map (`numMap[nums[i]] = i`).
+
+### Code (C++)
+
+```cpp
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -24,22 +40,7 @@ public:
         return {};
     }
 };
-
-To solve the problem of finding two indices in an array that add up to a given target, we can use a hash map (unordered_map in C++) to efficiently track the indices of the elements as we iterate through the array. This approach allows us to find the solution in linear time.
-
-### Explanation:
-
-1. **Initialization:**
-   - Use an `unordered_map` (numMap) to store the elements of the array and their indices as we iterate through the array.
-
-2. **Iterating through the array:**
-   - For each element `nums[i]`, calculate its complement with respect to the target (`complement = target - nums[i]`).
-   - Check if the complement already exists in the map. If it does, that means we have found the two indices that add up to the target.
-     - Return the indices of the complement and the current element (`{numMap[complement], i}`).
-   - If the complement does not exist in the map, store the current element and its index in the map (`numMap[nums[i]] = i`).
-
-3. **Return the result:**
-   - If a solution is found, the function returns the indices. If no solution is found (which is not the case according to the problem statement), the function would return an empty vector.
+```
 
 ### Time Complexity:
 
