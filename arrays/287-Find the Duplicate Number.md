@@ -1,4 +1,4 @@
-##[287-find-the-duplicate-number](https://leetcode.com/problems/find-the-duplicate-number/)
+# [287-find-the-duplicate-number](https://leetcode.com/problems/find-the-duplicate-number/)
 
 ![](https://badgen.net/badge/Level/Medium/yellow)
 
@@ -7,7 +7,6 @@ There is only one repeated number in nums, return this repeated number.
 You must solve the problem without modifying the array nums and uses only constant extra space.
 
 ### Approach Used - 1:
-
 - Sorting the array and then iterating through it to find the duplicate element.
 
 ### Code-1 (C++)
@@ -77,9 +76,14 @@ public:
 ```
 
 ### Time Complexity:
-
 - **O(n):** The loop iterates through the array once.
 
 ### Space Complexity:
-
 - **O(1):** No extra space is used.
+
+
+### Connect With Me : 
+
+<a href="https://www.linkedin.com/in/shivam-ray-b4306524a/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://x.com/rai_shivam11/" target="_blank"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="X (formerly Twitter)">
+</a>

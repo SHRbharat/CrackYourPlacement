@@ -1,4 +1,4 @@
-##[26-remove-duplicates-from-sorted-array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+# [26-remove-duplicates-from-sorted-array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 ![](https://badgen.net/badge/Level/Medium/green)
 
@@ -48,9 +48,13 @@ public:
 ```
 
 ### Time Complexity:
-
 - **O(n):** The algorithm makes a single pass through the array.
 
 ### Space Complexity:
-
 - **O(1):** The algorithm uses a constant amount of extra space.
+
+### Connect With Me : 
+
+<a href="https://www.linkedin.com/in/shivam-ray-b4306524a/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="https://x.com/rai_shivam11/" target="_blank"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="X (formerly Twitter)">
+</a>
