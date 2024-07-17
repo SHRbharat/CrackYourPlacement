@@ -1,6 +1,6 @@
 # [26-remove-duplicates-from-sorted-array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
-![](https://badgen.net/badge/Level/Medium/green)
+![](https://badgen.net/badge/Level/Easy/green)
 
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 

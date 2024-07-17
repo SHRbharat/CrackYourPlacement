@@ -1,6 +1,8 @@
 # [](https://leetcode.com/)
 
 ![](https://badgen.net/badge/Level/Medium/green)
+![](https://badgen.net/badge/Level/Easy/green)
+![](https://badgen.net/badge/Level/Hard/red)
 
 description-paste here
 
