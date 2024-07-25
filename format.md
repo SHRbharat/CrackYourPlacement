@@ -23,7 +23,7 @@ description-paste here
 - **O(n):** desc
 
 ### Space Complexity:
-- **O(n):** desc
+- **O(1):** no extra space is used.
 
 
 ### Connect With Me : 
