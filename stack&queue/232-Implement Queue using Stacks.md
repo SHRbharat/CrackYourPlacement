@@ -4,7 +4,7 @@
 
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
-### Approach Used :
+### Approach Used (double stacks) :
 
 -   The `MyQueue` class implements a queue using two stacks.
 
@@ -62,6 +62,75 @@ public:
 ### Space Complexity:
 - **O(n):** same number of elements are stored onto stack.
 
+### Approach Used (single stack,recursive methods) :
+
+-   The `MyQueue` class implements a queue using a stack.
+
+### Code (C++)
+
+```cpp
+class MyQueue {
+private:
+    stack<int> stack;
+    int popRecursive() {
+        int x = stack.top();
+        stack.pop();
+        if (stack.empty()) {
+            return x;
+        }
+        int item = popRecursive();
+        stack.push(x);
+        return item;
+    }
+
+    int peekRecursive() {
+        int x = stack.top();
+        stack.pop();
+        if (stack.empty()) {
+            stack.push(x);
+            return x;
+        }
+        int item = peekRecursive();
+        stack.push(x);
+        return item;
+    }
+
+public:
+    MyQueue() {
+        
+    }
+    
+    void push(int x) {
+        stack.push(x);
+    }
+    
+    int pop() {
+        if (stack.empty()) {
+            return -1;
+        }
+        return popRecursive();
+    }
+    
+    int peek() {
+        if (stack.empty()) {
+            return -1;
+        }
+        return peekRecursive();
+    }
+    
+    bool empty() {
+        return stack.empty();
+    }
+};
+```
+
+### Time & Space Complexity:
+| Operation | Time Complexity | Space Complexity |
+|-----------|-----------------|------------------|
+| Push      | O(1)            | O(1)             |
+| Pop       | O(n)            | O(n)             |
+| Peek      | O(n)            | O(n)             |
+| Empty     | O(1)            | O(1)             |
 
 ### Connect With Me : 
 
